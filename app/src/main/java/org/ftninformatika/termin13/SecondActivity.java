@@ -41,11 +41,10 @@ public class SecondActivity extends AppCompatActivity {
 
     private void openUrl(){
         WebView ww=findViewById(R.id.webview);
-        ww.getSettings().getJavaScriptEnabled();
+        ww.getSettings().setJavaScriptEnabled(true);
         ww.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return super.shouldOverrideUrlLoading(view, request) {
                     return false;
                 }
         });
