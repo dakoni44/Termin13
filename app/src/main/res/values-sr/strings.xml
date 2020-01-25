@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Termin13</string>
+    <string name="btn_second_activity">Druga aktivnost</string>
+    <string name="lbl_choose">Izaberite:</string>
+    <string name="title_first_activity">Prva aktivnost</string>
+</resources>
