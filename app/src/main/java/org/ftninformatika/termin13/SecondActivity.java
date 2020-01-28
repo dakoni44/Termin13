@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        url=getIntent().getExtras().getString(url);
+        url=getIntent().getExtras().getString("url");
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)== PackageManager.PERMISSION_GRANTED){
             openUrl();
         }else{
@@ -41,11 +41,11 @@ public class SecondActivity extends AppCompatActivity {
 
     private void openUrl(){
         WebView ww=findViewById(R.id.webview);
-        ww.getSettings().getJavaScriptEnabled();
+        ww.getSettings().setJavaScriptEnabled(true);
         ww.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return super.shouldOverrideUrlLoading(view, request) {
+
                     return false;
                 }
         });
