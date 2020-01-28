@@ -22,10 +22,12 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         url=getIntent().getExtras().getString("url");
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)== PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)== PackageManager.PERMISSION_GRANTED
+        && ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED){
             openUrl();
         }else{
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, PERMISION_REQUEST_INTERNET);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET, Manifest.permission.CAMERA},
+                    PERMISION_REQUEST_INTERNET);
         }
     }
 
@@ -45,10 +47,6 @@ public class SecondActivity extends AppCompatActivity {
         ww.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-<<<<<<< HEAD
-
-=======
->>>>>>> e856ef8399085591fd3231d494d35feb9284eb7d
                     return false;
                 }
         });
