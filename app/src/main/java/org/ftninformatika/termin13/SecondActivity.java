@@ -45,7 +45,10 @@ public class SecondActivity extends AppCompatActivity {
         ww.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e856ef8399085591fd3231d494d35feb9284eb7d
                     return false;
                 }
         });
